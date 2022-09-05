@@ -1,2 +1,2 @@
 #!/bin/bash
-python3 $PYCODE >> 1-run_inline
+python3 <<< $PYCODE
