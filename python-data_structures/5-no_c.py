@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 def no_c(my_string):
-    for number in range(len(my_string)):
-        pop(c) and pop(C)
+        my_string = my_string.translate({ord(i): None for i in 'cC'})
         return my_string
