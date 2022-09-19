@@ -11,4 +11,4 @@ class Square:
         elif type(size) is not int:
             raise TypeError("size must be an integer")
         else:
-            self.__self = size
+            self.__size = size
