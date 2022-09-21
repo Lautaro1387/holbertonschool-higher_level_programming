@@ -41,7 +41,7 @@ class Square:
 
     def area(self):
         """def name: area"""
-        return self.__size * size.__size
+        return self.__size * self.__size
 
     def my_print(self):
         """def name: my_print"""
