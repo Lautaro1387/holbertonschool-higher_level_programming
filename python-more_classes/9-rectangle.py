@@ -9,8 +9,10 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """def __init__"""
-        self.__height = height
-        self.__width = width
+        self.height = height
+        self.width = width
+        self.height = height
+        self.width = width
         type(self).number_of_instances += 1
 
     @property
@@ -58,7 +60,8 @@ class Rectangle:
         return string
 
     def __repr__(self):
-        return (type(self).__name__ + "(" + str(self.__width) + ", " + str(self.__height) + ")")
+        return (type(self).__name__ + "(" + str(self.__width) +
+                ", " + str(self.__height) + ")")
 
     def __del__(self):
         print("Bye rectangle...")
