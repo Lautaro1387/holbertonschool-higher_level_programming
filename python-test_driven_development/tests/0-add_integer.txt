@@ -16,6 +16,9 @@ add function returning a + b
 	>>> add_integer(2, -1)
 	1
 
+	>>> add_integer(1)
+	99
+
 	>>> add_integer(2.1, 2.3)
 	4
 
