@@ -4,16 +4,9 @@
 
 def text_indentation(text):
     """def name: text_indentation"""
-    if text is not str:
+    if type(text) is not str:
         raise TypeError("text must be a string")
-    else:
-        string = ""
-        for char in text:
-            if char in ['.', '?', ':']:
-                string += char
-                print(string.strip())
-                print()
-                string = ""
-            else:
-                string += char
-        print(string.strip(), end="")
+    for delimit in ".?:":
+        text = (delimit + "\n\n").join(
+		[line.strip(" ") for line in text.split(delimit)])
+    print("{}".format(text), end="")
