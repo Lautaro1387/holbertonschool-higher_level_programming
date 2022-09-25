@@ -8,5 +8,5 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     for delimit in ".?:":
         text = (delimit + "\n\n").join(
-		[line.strip(" ") for line in text.split(delimit)])
+            [line.strip(" ") for line in text.split(delimit)])
     print("{}".format(text), end="")
