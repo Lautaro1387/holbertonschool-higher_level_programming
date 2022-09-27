@@ -13,3 +13,12 @@
 
 	>>> my_list.print_sorted()
 	[1, 2, 4]
+
+	>>> my_list = MyList("lau")
+
+	>>> my_list
+	['l', 'a', 'u']
+
+	>>> my_list.print_sorted()
+	['a', 'l', 'u']
+
