@@ -22,3 +22,7 @@
 	>>> my_list.print_sorted()
 	['a', 'l', 'u']
 
+	>>> new_list = MyList()
+
+	>>> new_list.print_sorted()
+	[]
