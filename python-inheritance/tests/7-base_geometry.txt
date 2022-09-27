@@ -3,7 +3,7 @@
 	>>> area()
 	Traceback (most recent call last):
 	NameError: name 'area' is not defined
-
+	
 	>>> bg = BaseGeometry()
 
 	>>> bg.integer_validator()
@@ -30,11 +30,13 @@
 	Traceback (most recent call last):
 	TypeError: age must be an integer
 
-	>>> bg.integer_validator("age", [3])
+	>>> bg.integer_validator("age", [4])
 	Traceback (most recent call last):
 	TypeError: age must be an integer
 
 	>>> bg.integer_validator("age", True)
+	Traceback (most recent call last):
+	TypeError: age must be an integer
 
 	>>> bg.integer_validator("age", {3, 4})
 	Traceback (most recent call last):
