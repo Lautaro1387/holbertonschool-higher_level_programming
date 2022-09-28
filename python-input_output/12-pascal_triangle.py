@@ -1,25 +1,15 @@
 #!/usr/bin/python3
-"""Technical interview reparation"""
+"""Technical interview preparation"""
+
 
 def pascal_triangle(n):
-    """
-    returns a list of lists of integers representing the Pascal’s triangle
-    """
+    """Pascal triangle"""
     lis = []
-    auxP = []
-    aux = [1]
     if n <= 0:
         return lis
-    for i in range(0, n):
-        if i == 0:
-            lis.append(aux)
-            continue
-        aux = []
-        for j in range(0, i + 1):
-            if j == 0 or j == i:
-                aux.append(1)
-                continue
-            aux.append(int(auxP[j]) + int(auxP[1 - j]))
-        lis.append(aux)
-        auxP = aux
+    for i in range(n):
+        lis.append([1] * (i + 1))
+    for i in range(1, len(lis)):
+       for j in range(1, len(lis[i]) - 1):
+            lis[i][j] = lis[i - 1][j - 1] + lis[i - 1][j]
     return lis

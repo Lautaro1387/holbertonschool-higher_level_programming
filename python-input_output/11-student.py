@@ -19,4 +19,6 @@ class Student:
         return i
 
     def reload_from_json(self, json):
+        if json == {}:
+            return
         self.__dict__ = json
