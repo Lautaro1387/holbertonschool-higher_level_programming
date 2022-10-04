@@ -8,7 +8,7 @@ from models.base import Base
 class Rectangle(Base):
     """class name: Rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """clas constructor"""
+        """class constructor"""
         self.__width = width
         self.__height = height
         self.__x = x
@@ -74,3 +74,42 @@ class Rectangle(Base):
         if y < 0:
             raise ValueError("y must be >= 0")
         self.__y = y
+
+    def display(self):
+        for i in range(self.__y):
+            print()
+        for j in range(self.__height):
+            for w in range(self.__x):
+                print(" ", end="")
+            for k in range(self.__width):
+                print("#", end="")
+            print()
+
+    def __str__(self):
+        return f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}'
+
+    def update(self, *args, **kwargs):
+        if args:
+            for i in range(len(args)):
+                if i == 0:
+                    setattr(self, "id", args[i])
+                if i == 1:
+                    setattr(self, "width", args[i])
+                if i == 2:
+                    setattr(self, "height", args[i])
+                if i == 3:
+                    setattr(self, "x", args[i])
+                if i == 4:
+                    setattr(self, "y", args[i])
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    setattr(self, "id", value)
+                if key == "width":
+                    setattr(self, "width", value)
+                if key == "height":
+                    setattr(self, "height", value)
+                if key == "x":
+                    setattr(self, "x", value)
+                if key == "y":
+                    setattr(self, "y", value)
