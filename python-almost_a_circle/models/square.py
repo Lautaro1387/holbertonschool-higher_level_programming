@@ -51,3 +51,8 @@ class Square(Rectangle):
                     setattr(self, "x", value)
                 if key == "y":
                     setattr(self, "y", value)
+
+    def to_dictionary(self):
+        """dictionary"""
+        my_dict = {"id": self.id, "x": self.x, "size": self.size, "y": self.y}
+        return my_dict
