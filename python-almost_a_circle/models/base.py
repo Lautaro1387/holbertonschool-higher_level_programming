@@ -40,7 +40,7 @@ class Base:
     def from_json_string(json_string):
         """returns the list of the JSON string representation json_string"""
         if json_string is None or json_string == []:
-            json_string = []
+            return []
         return json.loads(json_string)
 
     @classmethod
@@ -55,11 +55,15 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """load from file"""
-        file = cls.__name__ + ".json"
+        """Load from file function"""
+        l = []
+        j = []
+        file_name = cls.__name__ + '.json'
         try:
-            with open(file, 'r') as f:
-                return [cls.create(**dictionary) for
-                        dictionary in cls.from_json_string(f.read())]
-        except FileNotFoundError:
+            with open(file_name, 'r') as f:
+                j = cls.from_json_string(f.read())
+            for i in j:
+                l.append(cls.create(**i))
+        except Exception:
             return []
+        return l
