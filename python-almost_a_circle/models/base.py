@@ -3,7 +3,6 @@
 
 
 import json
-from os import path
 
 
 class Base:
@@ -46,21 +45,21 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """create"""
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
         if cls.__name__ == "Square":
-            dummy = cls(1, 1)
+            dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
 
     @classmethod
     def load_from_file(cls):
-        """load_from_file doc"""
-        l_instances = []
-        if path.isfile(f"{cls.__name__}.json"):
-            with open(f"{cls.__name__}.json", 'r') as f:
-                for line in f:
-                    instances = cls.from_json_string(line)
-                    for item in instances:
-                        l_instances.append(cls.create(**item))
-        return l_instances
+        """load from file"""
+        file = cls.__name__ + ".json"
+        try:
+            with open(file, 'r') as f:
+                return [cls.create(**dictionary) for
+                        dictionary in cls.from_json_string(f.read())]
+        except FileNotFoundError:
+            return []
