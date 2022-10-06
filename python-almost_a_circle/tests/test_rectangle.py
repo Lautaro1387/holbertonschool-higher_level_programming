@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Test class rectangle"""
 
+
+import sys
 import unittest
 from models.rectangle import Rectangle
 from io import StringIO
-import sys
 
 
 class testing(unittest.TestCase):
