@@ -14,7 +14,7 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-            Base.id = Base.__nb_objects
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -55,15 +55,10 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Load from file function"""
-        l = []
-        j = []
-        file_name = cls.__name__ + '.json'
+        file = cls.__name__ + ".json"
         try:
-            with open(file_name, 'r') as f:
-                j = cls.from_json_string(f.read())
-            for i in j:
-                l.append(cls.create(**i))
-        except Exception:
+            with open(file, 'r') as f:
+                return [cls.create(**dictionary) for
+                        dictionary in cls.from_json_string(f.read())]
+        except FileNotFoundError:
             return []
-        return l
