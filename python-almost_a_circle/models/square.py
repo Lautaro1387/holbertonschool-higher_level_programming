@@ -10,6 +10,8 @@ class Square(Rectangle):
 
     def __init__(self, size, x=0, y=0, id=None):
         self.size = size
+        self.x = size
+        self.y = size
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
@@ -58,4 +60,4 @@ class Square(Rectangle):
                    "size": self.size,
                    "x": self.x,
                    "y": self.y}
-        return my_dicet
+        return my_dict
