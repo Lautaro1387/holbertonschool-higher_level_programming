@@ -1,2 +1,2 @@
 -- Removes all records
-REMOVE
+TRUNCATE second_table WHERE score <= 5
