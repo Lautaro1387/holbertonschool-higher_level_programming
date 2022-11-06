@@ -1,0 +1,2 @@
+-- Removes all records
+REMOVE

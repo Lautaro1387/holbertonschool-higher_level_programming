@@ -1,2 +1,2 @@
 -- Updates the score
-SELECT name UPDATE TABLE second_table WHERE id = 10;
+UPDATE TABLE second_table SET name = 'Bob' WHERE id = 10;
