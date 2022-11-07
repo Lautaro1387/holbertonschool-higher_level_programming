@@ -1,2 +1,5 @@
 -- Lists all the cities
-SHOW DATABASE hbtn_0d_usa.sities WHERE name = California ORDER BY cities.id asc;
+SELECT id, name
+FROM cities
+WHERE state_id = '1'
+ORDER BY cities.id asc;
