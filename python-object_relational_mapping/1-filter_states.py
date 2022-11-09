@@ -9,11 +9,10 @@ import sys
 
 if __name__ == "__main__":
     _user = sys.argv[1]
-    _passwd = sys.argv[2]
+    _pass = sys.argv[2]
     _db = sys.argv[3]
 
-    db = connect(host="localhost", port=3006, user=_user,
-                passwd=_passwd, db=_db)
+    db = connect(host="localhost", port=3006, user=_user, passwd=_pass, db=_db)
     curs = db.cursor()
     curs.execute("SELECT * FROM states ORDER BY states.id asc")
     rows = curs.fetchall()
