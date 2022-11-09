@@ -6,6 +6,7 @@ import sys
 
 
 if __name__ == "__main__":
+    """Access (database)"""
     _user = sys.argv[1]
     _pass = sys.argv[2]
     _db = sys.argv[3]
