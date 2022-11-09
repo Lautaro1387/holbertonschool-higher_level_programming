@@ -1,4 +1,5 @@
 -- Create states table in hbtn_0e_0_usa with some data
+-- DROP DATABASE IF EXISTS hbtn_0e_0_usa; (sirve para eliminar y le di el uso de limpiar y empiece de 0)
 CREATE DATABASE IF NOT EXISTS hbtn_0e_0_usa;
 USE hbtn_0e_0_usa;
 CREATE TABLE IF NOT EXISTS states ( 

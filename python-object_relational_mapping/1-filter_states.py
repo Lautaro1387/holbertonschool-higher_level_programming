@@ -15,5 +15,5 @@ if __name__ == "__main__":
     curs.execute("SELECT * FROM states ORDER BY states.id asc")
     rows = curs.fetchall()
     for row in rows:
-        row[1][0] == "N"
-        print(row)
+        if row[1][0] == 'N':
+            print(row)
