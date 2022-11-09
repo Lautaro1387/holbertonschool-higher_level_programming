@@ -13,7 +13,7 @@ if __name__ == "__main__":
     _db = sys.argv[3]
 
     db = connect(host="localhost", port=3006,
-user=_user, passwd=_passwd, db=_db)
+        user=_user, passwd=_passwd, db=_db)
     curs = db.cursor()
     curs.execute("SELECT * FROM states ORDER BY states.id asc")
     rows = curs.fetchall()
