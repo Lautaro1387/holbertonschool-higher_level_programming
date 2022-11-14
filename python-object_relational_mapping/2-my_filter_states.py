@@ -14,10 +14,13 @@ if __name__ == "__main__":
     _db = sys.argv[3]
     _st = sys.argv[4]
 
-    db = connect(host="localhost", port=3006, user=_user, passwd=_pass, db=_db, st=_st)
+    db = connect(host="localhost", port=3306, user=_user, passwd=_pass, db=_db)
     curs = db.cursor()
-    curs.execute("SELECT * FROM states ORDER BY states.id asc".format(_st))
+    curs.execute("SELECT * FROM states WHERE states.name='{}'\
+            ORDER BY states.id asc".format(_st))
     rows = curs.fetchall()
     for row in rows:
         if row[1] == _st:
             print(row)
+    curs.close()
+    db.close()
