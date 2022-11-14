@@ -16,8 +16,8 @@ if __name__ == "__main__":
 
     db = connect(host="localhost", port=3006, user=_user, passwd=_pass, db=_db, st=_st)
     curs = db.cursor()
-    curs.execute("SELECT * FROM states ORDER BY states.id asc")
+    curs.execute("SELECT * FROM states ORDER BY states.id asc".format(_st))
     rows = curs.fetchall()
     for row in rows:
-        if row[1][0] == 'N':
+        if row[1] == _st:
             print(row)
