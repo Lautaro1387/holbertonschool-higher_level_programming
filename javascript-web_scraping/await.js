@@ -1,3 +1,3 @@
-async function f() {
-    return 1;
+async function f () {
+  return 1;
 }
