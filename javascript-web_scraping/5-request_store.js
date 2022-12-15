@@ -7,7 +7,7 @@ request(argv[2], function(error, response, body) {
     if (error) {
         throw error;
     }
-    fs.writeFile(argv[3], body, 'utf-8', function (error) {
+    fs.writeFile(argv[3], '/loripsum', 'utf-8', function (error) {
         if (error) {
             throw error;
         }
