@@ -11,5 +11,5 @@ request(argv[2], function (error, response, body) {
     if (error) {
       throw error;
     }
-    })
+  });
 });
